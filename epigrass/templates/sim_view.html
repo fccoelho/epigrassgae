@@ -32,7 +32,7 @@
         </ul>
         <div class="tab-content">
             <div class="tab-pane active" id="Record">
-                <form method="POST" action="{{ url|safe }}" enctype="multipart/form-data" class="well form-horizontal">
+                <form method="POST" action="{{ uri_for("sim-view",simulation_id=sid) }}" enctype="multipart/form-data" class="well form-horizontal">
                     <fieldset>
                         <input type="hidden" name="_csrf_token" value="{{ csrf_token() }}">
                         <div>{{ form.name.label }}: {{ form.name(class="input-xlarge focused required") }}</div>
@@ -75,11 +75,13 @@
                 </form>
             </div>
             <div class="tab-pane" id="EPG">
+                <pre>
                 <code>
                 {% for l in epg %}
                     <p>{{ l }}</p>
                 {% endfor %}
                 </code>
+                </pre>
             </div>
             <div class="tab-pane" id="Model">
                 {{ model }}

@@ -11,11 +11,11 @@ config = {
                          'cookie_name': 'session_name'},
 
 # jinja2 templates
-'webapp2_extras.jinja2' : {'template_path': ['templates','epigrass/templates', 'admin/templates'],
+'webapp2_extras.jinja2' : {'template_path': ['templates', 'epigrass/templates', 'admin/templates'],
                            'environment_args': {'extensions': ['jinja2.ext.i18n']}},
 
 # application name
-'app_name' : "Epigrass Web",
+'app_name': "Epigrass Web",
 
 # the default language code for the application.
 # should match whatever language the site uses when i18n is disabled

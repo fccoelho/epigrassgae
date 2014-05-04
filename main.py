@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# coding:utf8
 ##
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,8 +14,8 @@
 # limitations under the License.
 #
 
-__author__  = 'Rodrigo Augosto (@coto)'
-__website__ = 'www.beecoss.com'
+__author__ = 'Flávio Codeço Coelho  (@fccoelho)'
+__website__ = 'http://emap.fgv.br/fccoelho'
 
 import os, sys
 # Third party libraries path must be fixed before importing webapp2
@@ -32,10 +33,13 @@ from epigrass.lib.basehandler import handle_error
 webapp2_config = epigrass_config.config
 webapp2_config.update(config.config)
 
-app = webapp2.WSGIApplication(debug = os.environ['SERVER_SOFTWARE'].startswith('Dev'), config=webapp2_config)
+app = webapp2.WSGIApplication(debug=os.environ['SERVER_SOFTWARE'].startswith('Dev'), config=webapp2_config)
 
-for status_int in app.config['error_templates']:
-    app.error_handlers[status_int] = handle_error
+try:
+    for status_int in app.config['error_templates']:
+        app.error_handlers[status_int] = handle_error
+except KeyError:
+    pass
 
 routes.add_routes(app)
 epigrass_routes.add_routes(app)
