@@ -4,7 +4,7 @@ config = {
 # environment this app is running on: localhost, testing, production
 'environment': "localhost",
 # webapp2 sessions
-'webapp2_extras.sessions' : {'secret_key': '_PUT_KEY_HERE_YOUR_SECRET_KEY_'},
+'webapp2_extras.sessions' : {'secret_key': 'uhf8tnqou32s,5pit134tvajbgj2p2uhglq'},
 
 # webapp2 authentication
 'webapp2_extras.auth' : {'user_model': 'epigrass.models.User',
