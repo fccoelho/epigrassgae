@@ -11,6 +11,8 @@ if "SERVER_SOFTWARE" in os.environ:
 
     elif os.environ['SERVER_SOFTWARE'].startswith('Google'):
         from config.production import config
+    else:
+        from config.production import config
 else:
-    from config.testing import config
+    from config.production import config # was testing
 
