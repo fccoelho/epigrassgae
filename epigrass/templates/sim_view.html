@@ -75,13 +75,11 @@
                 </form>
             </div>
             <div class="tab-pane" id="EPG">
-                <pre>
                 <code>
                 {% for l in epg %}
-                    <p>{{ l }}</p>
+                    {{ l }}<br>
                 {% endfor %}
                 </code>
-                </pre>
             </div>
             <div class="tab-pane" id="Model">
                 {{ model }}
